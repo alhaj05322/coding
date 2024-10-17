@@ -1,0 +1,40 @@
+<app-jumbotron [title]="'Content Projection in Angular'"
+    [description]="'A most used scenario to use content projection'"></app-jumbotron>
+<form class="g-3 needs-validation">
+    <div class="row">
+        <div class="col-md-3">
+            <app-form-element-wrapper [label]="'First Name'" [tooltip]="'Enter your First Name only'"
+                [validation]="fname.touched && fname.errors ? fname.errors : {}">
+                <input type="text" #fname="ngModel" name="fname" [(ngModel)]="obj.fname" class="form-control"
+                    minlength="5" required>
+            </app-form-element-wrapper>
+        </div>
+        <div class="col-md-3">
+            <app-form-element-wrapper [label]="'Last Name'" [tooltip]="'Enter your Last Name only'"
+                [validation]="lname.touched && lname.errors ? lname.errors : {}">
+                <input type="text" class="form-control" #lname="ngModel" name="lName" [(ngModel)]="obj.lName" required>
+            </app-form-element-wrapper>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-4">
+            <app-form-element-wrapper [label]="'User Name'" [tooltip]="'Enter your First Name only'"
+                [validation]="userName.touched && userName.errors ? userName.errors : {}">
+                <input type="text" #userName="ngModel" name="userName" [(ngModel)]="obj.userName" class="form-control"
+                    required>
+            </app-form-element-wrapper>
+        </div>
+        <div class="col-md-3">
+            <app-form-element-wrapper [label]="'City'" [tooltip]="'Enter your First Name only'"
+                [validation]="city.touched && city.errors ? city.errors : {}">
+                <input type="text" #city="ngModel" name="city" [(ngModel)]="obj.city" class="form-control" required>
+            </app-form-element-wrapper>
+
+        </div>
+    </div>
+    <div class="row pt-3">
+        <div class="col-12">
+            <button class="btn btn-primary" type="submit">Submit form</button>
+        </div>
+    </div>
+</form>
